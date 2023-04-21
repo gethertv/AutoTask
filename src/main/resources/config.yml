@@ -1,0 +1,16 @@
+start:
+  rok: 2023
+  miesiac: 4
+  dzien: 21
+  godzina: 18
+  minuta: 00
+
+autotask:
+  '1':
+    time: '10:00'
+    commands:
+      - say run task 1!
+  '2':
+    time: '10:15'
+    commands:
+      - say run task 1!

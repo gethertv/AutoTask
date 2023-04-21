@@ -1,0 +1,7 @@
+name: AutoTask
+version: '${project.version}'
+main: dev.gether.autotask.AutoTask
+authors: [ gether ]
+description:
+  discord: dc.gether.dev
+website: gether.dev
