@@ -22,14 +22,10 @@ public class ThreadTask extends BukkitRunnable {
     public void run() {
         LocalTime currentTime = LocalTime.now();
 
-        for (EventData eventData : plugin.getEventData()) {
-            String time = currentTime.format(formatter);
-            String next = eventData.getEventTimes().format(formatter);
-            if (time.equalsIgnoreCase(next)) {
-                eventData.getCommands().forEach(cmd -> {
+        plugin.getEventData().stream()
+                .filter(eventData -> eventData.getEventTimes().format(formatter).equalsIgnoreCase(currentTime.format(formatter)))
+                .forEach(eventData -> eventData.getCommands().forEach(cmd -> {
                     Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd);
-                });
-            }
-        }
+                }));
     }
 }

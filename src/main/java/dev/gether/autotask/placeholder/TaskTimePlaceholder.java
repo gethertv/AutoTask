@@ -127,19 +127,17 @@ public class TaskTimePlaceholder extends PlaceholderExpansion {
 
         String temp = String.format("%02d:%02d:%02d", hours, minutes, remainingSeconds);
         return temp;
-
     }
 
     public String startServer()
     {
-        startDate = LocalDateTime.of(2023, 4, 21, 10, 0, 0);
         LocalDateTime now = LocalDateTime.now();
         Duration duration = Duration.between(startDate, now);
         long days = duration.toDays();
-        long hours = duration.toHours();
+        long hours = duration.toHours() % 24;
         long minutes = duration.toMinutes() % 60;
         long seconds = duration.getSeconds() % 60;
-        return String.format("%d:%02d:%02d", days, hours, minutes);
+        return String.format("%d:%02d:%02d:%02d", days, hours, minutes, seconds);
     }
 
 }

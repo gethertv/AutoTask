@@ -1,4 +1,4 @@
-name: AutoTask
+name: getAutoTask
 version: '${project.version}'
 main: dev.gether.autotask.AutoTask
 authors: [ gether ]
